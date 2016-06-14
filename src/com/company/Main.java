@@ -64,6 +64,7 @@ public class Main {
         try {
             List lines = FileUtils.readLines(txt, "UTF-8");
             System.out.println(lines);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
