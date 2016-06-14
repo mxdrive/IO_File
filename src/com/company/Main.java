@@ -1,9 +1,14 @@
 package com.company;
 
 import com.sun.org.apache.xerces.internal.impl.io.UTF8Reader;
-import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
+
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
+import org.apache.commons.io.filefilter.IOFileFilter;
+
 import java.io.*;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Main {
 
@@ -52,6 +57,13 @@ public class Main {
         try {
             String string = FileUtils.readFileToString(txt, "UTF-8");
             System.out.println(string);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            List lines = FileUtils.readLines(txt, "UTF-8");
+            System.out.println(lines);
         } catch (IOException e) {
             e.printStackTrace();
         }
