@@ -9,6 +9,10 @@ public class Main {
 
     public static void main(String[] args) {
 
+        for (int i = 0; i < args.length; i++) {
+            System.out.println(args[i]);
+        }
+
         BufferedReader bufferedReader = null;
         PrintWriter printWriter = null;
 
@@ -58,8 +62,15 @@ public class Main {
 
         try {
             List lines = FileUtils.readLines(txt, "UTF-8");
-            System.out.println(lines);
             Collections.sort(lines);
+            System.out.println(lines);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            List lines = FileUtils.readLines(txt, "UTF-8");
+            Collections.sort(lines, Collections.reverseOrder());
             System.out.println(lines);
         } catch (IOException e) {
             e.printStackTrace();
